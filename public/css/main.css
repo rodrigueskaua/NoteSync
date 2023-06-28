@@ -37,6 +37,12 @@ body {
   margin: var(--header-height) 0 0 0;
 }
 
+.main-page.blur {
+  transition: .7s;
+  filter: blur(3px);
+  pointer-events: none;
+}
+
 .header {
   position: fixed;
   top: 0;
