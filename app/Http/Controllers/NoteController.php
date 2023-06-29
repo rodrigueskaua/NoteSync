@@ -25,6 +25,6 @@ class NoteController extends Controller
         $note->content = $request->content;
         $note->save();
 
-        return redirect('welcome');
+        return redirect('/');
     }
 }
