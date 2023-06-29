@@ -1,16 +1,9 @@
 ClassicEditor
     .create(document.querySelector('.editor'), {
-
-
-
-
-
+        placeholder: 'Comece a escrever aqui...'
     })
     .then(editor => {
         window.editor = editor;
-
-
-
 
     })
     .catch(error => {
@@ -19,3 +12,5 @@ ClassicEditor
         console.warn('Build id: 2vx08gcvmrpb-sao95dwge53k');
         console.error(error);
     });
+
+

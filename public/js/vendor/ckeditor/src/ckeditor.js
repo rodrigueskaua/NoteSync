@@ -5,15 +5,16 @@
 import ClassicEditor from '@ckeditor/ckeditor5-editor-classic/src/classiceditor.js';
 import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment.js';
 import Autoformat from '@ckeditor/ckeditor5-autoformat/src/autoformat.js';
-import BlockQuote from '@ckeditor/ckeditor5-block-quote/src/blockquote.js';
 import Bold from '@ckeditor/ckeditor5-basic-styles/src/bold.js';
 import Essentials from '@ckeditor/ckeditor5-essentials/src/essentials.js';
 import Heading from '@ckeditor/ckeditor5-heading/src/heading.js';
-import Indent from '@ckeditor/ckeditor5-indent/src/indent.js';
 import Italic from '@ckeditor/ckeditor5-basic-styles/src/italic.js';
-import Link from '@ckeditor/ckeditor5-link/src/link.js';
 import List from '@ckeditor/ckeditor5-list/src/list.js';
+import ListProperties from '@ckeditor/ckeditor5-list/src/listproperties.js';
 import Paragraph from '@ckeditor/ckeditor5-paragraph/src/paragraph.js';
+import SelectAll from '@ckeditor/ckeditor5-select-all/src/selectall.js';
+import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformation.js';
+import TodoList from '@ckeditor/ckeditor5-list/src/todolist';
 
 class Editor extends ClassicEditor {}
 
@@ -21,15 +22,16 @@ class Editor extends ClassicEditor {}
 Editor.builtinPlugins = [
 	Alignment,
 	Autoformat,
-	BlockQuote,
 	Bold,
 	Essentials,
 	Heading,
-	Indent,
 	Italic,
-	Link,
 	List,
-	Paragraph
+	ListProperties,
+	Paragraph,
+	SelectAll,
+	TextTransformation,
+	TodoList
 ];
 
 // Editor configuration.
@@ -38,17 +40,16 @@ Editor.defaultConfig = {
 		items: [
 			'undo',
 			'redo',
-			'heading',
 			'|',
+			'heading',
 			'bold',
 			'italic',
-			'link',
 			'|',
-			'bulletedList',
+			'todoList',
 			'numberedList',
-			'alignment',
 			'|',
-			'blockQuote'
+			'alignment',
+			'selectAll'
 		]
 	},
 	language: 'pt-br'

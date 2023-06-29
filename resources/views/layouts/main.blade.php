@@ -21,7 +21,8 @@
     <div class="start-page">
       <header class="header">
         <div class="header-container">
-          <span href="#" class="current-page">@yield('current-page-name')</span>
+            <a href="#"  class="nav-link" href="">Voltar</a>
+          <span class="current-page">@yield('current-page-name')</span>
           <div class="header-toggle">
             <i class='bx bx-menu' id="header-toggle"></i>
           </div>
