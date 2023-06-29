@@ -286,11 +286,76 @@ body {
 
 }
 
+/*===== Index Note =====*/
+.notes-container {
+    padding: 0 !important;
+}
+
+.notes-container.row {
+    margin: 0 !important;
+}
+
+.notes-container .note-card {
+    margin-top: 10px;
+    border-radius: 15px;
+    background: #EDF1FA;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 15px 20px;
+    min-height: 200px;
+}
+
+.note-card>.note-title {
+    font-size: 25px;
+    font-weight: 600;
+    color: var(--black);
+    margin-bottom: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.note-card>.note-date {
+    font-size: 12px;
+    font-weight: 300;
+    color: var(--black);
+    opacity: 0.5;
+}
+
+.note-card>.note-content {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 20px;
+    color: var(--black);
+    margin-bottom: 20px;
+    max-height: 23.99px;
+    min-height: 23.99px;
+    overflow: hidden;
+    line-height: 1.5;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+}
+
+.note-card>.note-button {
+    display: inline-block;
+    background-color: var(--primary);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.note-card>.note-button:hover {
+    background-color: var(--primary-dark)
+}
+
 /*===== Form Note Create =====*/
 
 .form-note-create {
     padding: 0 !important;
-
 }
 
 .form-note-create>.form-control {
