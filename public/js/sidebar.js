@@ -3,7 +3,6 @@ const showMenu = (headerToggle, navbarId, contentId) => {
     const nav = document.getElementById(navbarId);
     const content = document.querySelector('.main-page');
 
-
     if (toggleBtn && nav) {
         toggleBtn.addEventListener('click', () => {
             nav.classList.toggle('show-menu');
@@ -23,11 +22,17 @@ const showMenu = (headerToggle, navbarId, contentId) => {
         });
 
         nav.addEventListener('mouseover', () => {
-            content.classList.add('blur');
+            if (window.innerWidth > 768) {
+                content.classList.add('blur');
+            }
         });
 
         nav.addEventListener('mouseout', () => {
-            content.classList.remove('blur');
+            if (window.innerWidth > 768) {
+                nav.classList.remove('show-menu');
+                toggleBtn.classList.remove('bx-x');
+                content.classList.remove('blur');
+            }
         });
     }
 };
