@@ -10,7 +10,7 @@ class NoteController extends Controller
     public function index()
     {
 
-        $notes = Note::all();
+        $notes = Note::orderBy('updated_at', 'desc')->get();
         return view('notes.index', compact('notes'));
     }
     public function create()
