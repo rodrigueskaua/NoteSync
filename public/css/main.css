@@ -354,11 +354,11 @@ body {
 
 /*===== Form Note Create =====*/
 
-.form-note {
+.form-note-create {
     padding: 0 !important;
 }
 
-.form-note>.form-control {
+.form-note-create>.form-control {
     height: 50px;
     font-size: 23px;
     border: none;
@@ -369,12 +369,12 @@ body {
 
 }
 
-.form-note>.form-control:focus,
-.form-note>.form-control:valid {
+.form-note-create>.form-control:focus,
+.form-note-create>.form-control:valid {
     border-color: var(--primary);
 }
 
-.form-note>.fixed-bottom-container {
+.form-note-create>.fixed-bottom-container {
     position: fixed;
     bottom: 0;
     left: 0;
@@ -383,28 +383,6 @@ body {
     background-color: #f8f9fa;
     box-shadow: 0px -2px 3px rgba(0, 0, 0, 0.1);
 }
-
-.form-note>.fixed-bottom-container .button-animation {
-    animation-name: buttonAnimation;
-    animation-duration: 0.8s;
-    animation-timing-function: ease-in-out;
-}
-
-@keyframes buttonAnimation {
-    0% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.1);
-    }
-
-    100% {
-        transform: scale(1);
-    }
-}
-
-
 
 /*===== CKEditor =====*/
 /**

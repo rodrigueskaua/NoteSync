@@ -27,18 +27,4 @@ class NoteController extends Controller
 
         return redirect('/');
     }
-
-    public function show($id)
-    {
-        $note = Note::findOrFail($id);
-        return view('notes.show', ['note' => $note]);
-    }
-    public function update(Request $request)
-    {
-        Note::findOrFail($request->id)->update($request->all());
-        return redirect('/');
-
-    }
-
-
 }
