@@ -3,10 +3,10 @@
 @section('current-page-name', 'Nova Anotação')
 @section('content')
 
-<form action="{{ route('notes.store') }}" method="POST" class="form-note-create">
+<form action="{{ route('notes.store') }}" method="POST" class="form-note">
 @csrf
   <input  required type="text" class="form-control" placeholder="Titulo" name="title">
-  <textarea required name="content" class="editor">
+  <textarea required name="content" class="create">
 
 
   </textarea>
