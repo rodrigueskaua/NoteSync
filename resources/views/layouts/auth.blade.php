@@ -18,6 +18,8 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     {{-- Script CDN SweetAlert2 --}}
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    {{-- Google Site Verification --}}
+    <meta name="google-site-verification" content="q1_C1zEppvZJ4KFBC7-a1S6bQyORY4g2Y__LDYTt5Ts" />
 </head>
   <body>
 
