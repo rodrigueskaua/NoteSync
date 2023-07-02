@@ -522,7 +522,21 @@ body {
     color: var(--primary);
 }
 
-.form>.forgot-password>a {
+.form>div>.form-check>label {
+    color: var(--white);
+    font-size: 14px;
+    font-weight: 300;
+
+}
+
+
+
+.form>div>.form-check>.form-check-input:checked {
+    background-color: var(--primary);
+    border: none;
+}
+
+.form>div>.forgot-password>a {
     color: var(--white);
     font-size: 14px;
     font-weight: 300;
@@ -530,7 +544,7 @@ body {
     transition: var(--transition-text);
 }
 
-.form>.forgot-password>a:hover {
+.form>div>.forgot-password>a:hover {
     color: var(--gray-2);
 }
 

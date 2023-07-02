@@ -32,8 +32,18 @@
   <input type="password" name="password" class="form-control" placeholder="Digite sua Senha" required>
 </div>
 
-<div class="forgot-password text-end mt-2">
-  <a href="/">Esqueceu sua senha?</a>
+<div class="mt-2 d-flex justify-content-between align-content-center">
+  <div class="form-check">
+    <input class="form-check-input" type="checkbox" name="remember"  id="remember">
+    <label class="form-check-label" for="remember">
+      Lembrar-me
+    </label>
+  </div>
+
+  <div class="forgot-password">
+    <a href="/">Esqueceu sua senha?</a>
+  </div>
+
 </div>
 
 <div class="form-buttons mb-4">
