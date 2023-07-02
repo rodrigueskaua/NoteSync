@@ -1,8 +1,25 @@
 @extends('layouts.auth')
 @section('title', 'Login')
 @section('card-class', 'card-login')
-@section('form-action', '')
+@section('form-action', route('auth'))
 @section('content')
+
+@if ($mensagem = Session::get('erro'))
+<script>
+  Swal.fire({
+      icon: 'error',
+      title: 'Erro',
+      text: '{{ $mensagem }}',
+  });
+</script>
+@endif
+
+@if ($errors->any())
+    @foreach ($errors->all() as $error)
+        {{ $error }} <br>
+    @endforeach
+@endif
+@csrf
 <div class="form-group mb-5">
   <label for="">Email</label><br>
   <i class="bx bx-envelope input-icon"></i>
@@ -20,7 +37,7 @@
 </div>
 
 <div class="form-buttons mb-4">
-  <button class="btn-login">Login</button>
+  <button type="submit" class="btn-login">Login</button>
   <div class="divider">
     <hr>
   </div>

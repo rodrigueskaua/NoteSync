@@ -82,7 +82,7 @@
               </div>
             </div>
           </div>
-          <a href="#" class="nav-link nav-logout">
+          <a href="{{ route('auth.logout') }}" class="nav-link nav-logout">
             <i class='bx bx-log-out nav-icon'></i>
             <span class="nav-name">Sair</span>
           </a>
