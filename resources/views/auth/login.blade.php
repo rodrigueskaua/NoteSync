@@ -57,7 +57,7 @@
 
 @section('sign-class', 'sign-up')
 @section('sign-question-text', 'Não possui uma conta?')
-@section('sign-link', '')
+@section('sign-link',  route('auth.register'))
 @section('sign-link-text', 'Cadastre-se')
 
 @endsection

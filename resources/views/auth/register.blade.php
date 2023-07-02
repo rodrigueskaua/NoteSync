@@ -45,7 +45,7 @@
 
 @section('sign-class', 'sign-in')
 @section('sign-question-text', 'Já possui uma conta?')
-@section('sign-link', '')
+@section('sign-link', route('auth.login'))
 @section('sign-link-text', 'Faça Login')
 
 @endsection
