@@ -522,14 +522,21 @@ body {
     color: var(--primary);
 }
 
-.form>div>.form-check>label {
+.form-group>.alert {
+    background-color: var(--primary-dark);
+    color: var(--white);
+    font-size: 15px;
+    padding: .5rem .5rem;
+    border: none;
+    border-radius: 0;
+}
+
+.alert .form>div>.form-check>label {
     color: var(--white);
     font-size: 14px;
     font-weight: 300;
 
 }
-
-
 
 .form>div>.form-check>.form-check-input:checked {
     background-color: var(--primary);
@@ -623,6 +630,8 @@ a {
 .sign-in a:hover {
     color: var(--primary-dark);
 }
+
+
 
 @media (max-width: 768px) {
     .main-login>.row>.col-lg-12 {
