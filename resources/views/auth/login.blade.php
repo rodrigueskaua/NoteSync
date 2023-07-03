@@ -4,32 +4,23 @@
 @section('form-action', route('auth'))
 @section('content')
 
-@if ($mensagem = Session::get('erro'))
-<script>
-  Swal.fire({
-      icon: 'error',
-      title: 'Erro',
-      text: '{{ $mensagem }}',
-  });
-</script>
-@endif
-
-@if ($errors->any())
-    @foreach ($errors->all() as $error)
-        {{ $error }} <br>
-    @endforeach
-@endif
 @csrf
-<div class="form-group mb-5">
+<div class="form-group mb-3">
   <label for="">Email</label><br>
   <i class="bx bx-envelope input-icon"></i>
   <input type="email" name="email" class="form-control" placeholder="Digite seu Email" required>
+  @error('email')
+    <div class="alert mt-1" role="alert">{{ $message }}</div>
+  @enderror
 </div>
 
 <div class="form-group">
   <label for="">Senha</label><br>
   <i class="bx bx-lock input-icon"></i>
   <input type="password" name="password" class="form-control" placeholder="Digite sua Senha" required>
+  @error('password')
+    <div class="alert mt-1" role="alert">{{ str_replace('password', 'senha', $message) }}</div>
+  @enderror
 </div>
 
 <div class="mt-2 d-flex justify-content-between align-content-center">

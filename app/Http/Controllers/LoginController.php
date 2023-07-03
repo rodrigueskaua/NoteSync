@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\Rule;
 
 class LoginController extends Controller
 {
@@ -20,9 +21,9 @@ class LoginController extends Controller
     public function auth(Request $request)
     {
 
-        $request->validate([
-            'email' => ['required', 'email'],
-            'password' => ['required'],
+        $validatedData = $request->validate([
+            'email' => ['required', 'email', Rule::exists('users', 'email')],
+            'password' => ['required', 'min:8'],
         ]);
 
         $credentials = $request->only('email', 'password');
@@ -31,7 +32,9 @@ class LoginController extends Controller
             $request->session()->regenerate();
             return redirect()->intended(route('notes.index'));
         } else {
-            return redirect()->back()->with('erro', 'Usuário ou senha inválido.');
+            return redirect()->back()->withErrors([
+                'email' => 'Dados incorretos. Verifique as informações fornecidas.',
+            ]);
         }
     }
 
