@@ -18,4 +18,12 @@
         </div>
       </div>
 </form>
+
+@section('ckeditor')
+    {{-- Script Dependency CKEditor --}}
+    <script src="/js/vendor/ckeditor/build/ckeditor.js"></script>
+	{{-- Script CKEditor --}}
+	<script src="/js/CKEditor.js"></script>
+@endsection
+
 @endsection
