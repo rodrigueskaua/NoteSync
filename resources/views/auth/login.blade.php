@@ -42,8 +42,8 @@
   <div class="divider">
     <hr>
   </div>
-  <button class="btn-google d-flex justify-content-center align-items-center"><img
-      src="/assets/brand/google-favicon.svg" alt="" srcset="">Continue com o google</button>
+  <a href="{{ route('auth.google') }}" class="btn-google d-flex justify-content-center align-items-center"><img
+      src="/assets/brand/google-favicon.svg" alt="" srcset="">Continue com o google</a>
 </div>
 
 @section('sign-class', 'sign-up')

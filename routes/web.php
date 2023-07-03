@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\NoteController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\GoogleAuthController;
 
 Route::middleware(['checkauth'])->group(function () {
     Route::get('/', [NoteController::class, 'index'])->name('notes.index');
@@ -20,4 +21,7 @@ Route::middleware(['checkguest'])->group(function () {
     Route::get('/login', [LoginController::class, 'index'])->name('auth.login');
     Route::get('/register', [LoginController::class, 'create'])->name('auth.register');
     Route::post('/user/create', [UserController::class, 'store'])->name('user.store');
+    Route::get('/auth/google', [GoogleAuthController::class, 'redirect'])->name('auth.google');
+    Route::get('/auth/google/call-back', [GoogleAuthController::class, 'callbackGoogle']);
+
 });
