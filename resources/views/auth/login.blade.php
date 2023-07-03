@@ -8,7 +8,7 @@
 <div class="form-group mb-3">
   <label for="">Email</label><br>
   <i class="bx bx-envelope input-icon"></i>
-  <input type="email" name="email" class="form-control" placeholder="Digite seu Email" required>
+  <input type="email" name="email" class="form-control" autocomplete="off" placeholder="Digite seu Email" required>
   @error('email')
     <div class="alert mt-1" role="alert">{{ $message }}</div>
   @enderror
@@ -17,7 +17,7 @@
 <div class="form-group">
   <label for="">Senha</label><br>
   <i class="bx bx-lock input-icon"></i>
-  <input type="password" name="password" class="form-control" placeholder="Digite sua Senha" required>
+  <input type="password" name="password" class="form-control" autocomplete="off" placeholder="Digite sua Senha" required>
   @error('password')
     <div class="alert mt-1" role="alert">{{ str_replace('password', 'senha', $message) }}</div>
   @enderror
