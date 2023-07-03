@@ -4,13 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Note;
+use Illuminate\Support\Facades\Gate;
 
 class NoteController extends Controller
 {
     public function index()
     {
-
-        $notes = Note::orderBy('updated_at', 'desc')->get();
+        $notes = auth()->user()->notes()->orderBy('updated_at', 'desc')->get();
         return view('notes.index', compact('notes'));
     }
     public function create()
@@ -33,7 +33,13 @@ class NoteController extends Controller
     public function show($id)
     {
         $note = Note::findOrFail($id);
-        return view('notes.show', ['note' => $note]);
+
+        if (Gate::allows('show-note', $note)) {
+            return view('notes.show', ['note' => $note]);
+        } else {
+            return redirect()->route('notes.index');
+        }
+
     }
     public function update(Request $request)
     {
