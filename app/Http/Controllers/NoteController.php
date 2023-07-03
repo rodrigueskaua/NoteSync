@@ -20,9 +20,11 @@ class NoteController extends Controller
 
     public function store(Request $request)
     {
+        $user = auth()->user();
         $note = new Note;
         $note->title = $request->title;
         $note->content = $request->content;
+        $note->user_id = $user->id;
         $note->save();
 
         return redirect('/');
