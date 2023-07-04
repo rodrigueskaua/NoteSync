@@ -169,6 +169,11 @@ body {
     transform: rotate(180deg);
 }
 
+.nav-dropdown-collapse:hover .nav-link {
+    color: var(--primary);
+    transition: var(--transition-text) !important;
+}
+
 .list-group {
     max-height: 0;
     opacity: 0;

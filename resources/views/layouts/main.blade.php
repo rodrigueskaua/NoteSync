@@ -38,21 +38,21 @@
             <div class="nav-list">
               <div class="nav-items">
                 <h3 class="nav-subtitle">Navegação</h3>
-                <a href="#" class="nav-link active">
+                <a href="{{ route('notes.index') }}" class="nav-link">
                   <i class='bx bx-home nav-icon'></i>
                   <span class="nav-name">Início</span>
+                </a>
+                <a href="{{ route('notes.create') }}" class="nav-link ">
+                  <i class='bx bx-edit nav-icon'></i>
+                  <span class="nav-name">Criar Nota</span>
                 </a>
               </div>
               <div class="nav-items">
                 <h3 class="nav-subtitle">Notas</h3>
-                <a href="#" class="nav-link ">
-                  <i class='bx bx-edit nav-icon'></i>
-                  <span class="nav-name">Criar Nota</span>
-                </a>
                 <div class="nav-dropdown-collapse">
                   <a class="nav-link nav-link-collapse" href="#">
                     <i class='bx bx-note nav-icon'></i>
-                    <span class="nav-name">Anotações</span>
+                    <span class="nav-name">Recentes</span>
                     <i class='bx bx-chevron-down nav-icon nav-dropdown-icon'></i>
                   </a>
                   <ul class="list-group list-group-flush">
@@ -71,12 +71,10 @@
                     <li class="list-group-item">
                       <a href="">Texto 5</a>
                     </li>
-                    <li class="list-group-item">
+                    <li class="list-group-item mb-1">
                       <a href="">Texto 6</a>
                     </li>
-                    <li class="list-group-item">
-                      <button class="btn btn-primary btn-sm w-100">Ver mais</button>
-                    </li>
+                      <a href="{{ route('notes.index') }}" class="btn btn-secondary btn-sm w-100">Ver mais</a>
                   </ul>
                 </div>
               </div>
