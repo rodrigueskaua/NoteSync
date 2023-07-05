@@ -187,6 +187,14 @@ body {
     color: var(--black);
 }
 
+.nav-items-end>.nav-link {
+    color: white;
+}
+
+.nav-items-end>.nav-link:hover {
+    color: rgba(76, 76, 76, 0.701);
+}
+
 .nav-link:hover {
     color: var(--primary);
     transition: var(--transition-text) !important;
@@ -462,12 +470,6 @@ body {
  @license Copyright (c) 2014-2023, CKSource Holding sp. z o.o. All rights reserved.
   This file is licensed under the terms of the MIT License (see LICENSE.md).
 */
-
-/* .ck-editor,
-.ck {
-    color: var(--primary);
-} */
-
 .ck.ck-editor__main>.ck-editor__editable {
     background-color: var(--card-background) !important;
     background: var !important;
