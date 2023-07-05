@@ -24,6 +24,7 @@ select:focus {
     --white: #fff;
     --subtitle-color: #d3d4db;
     --card-background: #FDFEFF;
+    --card-hover: #bcbcbc32;
     --sticky-panel-background: #FDFEFF;
     --card-border: 2px solid rgba(67, 67, 67, 0.15);
     --sidebar-background: linear-gradient(180deg, #FFF 40%, #E50054 100%, #E50054 100%);
@@ -50,6 +51,7 @@ body.dark-mode {
     --white: #1F1F1F;
     --subtitle-color: rgba(132, 131, 131, 0.783);
     --body-background: #1f2125;
+    --card-hover: #0000003e;
     --card-background: #23262C;
     --card-border: 2px solid rgba(130, 130, 130, 0.45);
     --sidebar-background: linear-gradient(180deg, #1F222A 40%, rgb(202, 5, 77) 100%);
@@ -156,9 +158,6 @@ body {
     font-size: 19px;
 }
 
-.nav-brand {
-    width: 20px;
-}
 
 .nav-list,
 .nav-items {
@@ -342,13 +341,18 @@ body {
 }
 
 .notes-container .note-card {
+    position: relative;
     margin-top: 10px;
     padding: 15px 20px;
-    min-height: 200px;
+    min-height: 150px;
+
     border-radius: 12px;
     border: var(--card-border);
     background: var(--card-background);
     box-shadow: -1px -1px 30px 0px rgba(73, 73, 73, 0.093);
+    transition: filter 0.3s ease;
+    display: flex;
+    flex-direction: column;
 }
 
 .note-card>.note-title {
@@ -373,29 +377,35 @@ body {
     font-weight: 300;
     line-height: 20px;
     color: var(--black);
-    margin-bottom: 20px;
-    max-height: 23.99px;
-    min-height: 23.99px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    /* Número máximo de linhas a serem exibidas */
+    -webkit-box-orient: vertical;
     overflow: hidden;
-    line-height: 1.5;
-    white-space: nowrap;
     text-overflow: ellipsis;
+    max-height: 40px;
+    min-height: 40px;
+    word-break: break-all;
+    margin-bottom: 0;
+
 }
 
-.note-card>.note-button {
-    display: inline-block;
-    background-color: var(--primary);
-    color: var(--white);
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
+.note-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background-color: var(--card-hover);
+    opacity: 0;
+    transition: opacity .3s;
 }
 
-.note-card>.note-button:hover {
-    background-color: var(--primary-dark)
+
+
+.note-card:hover .note-overlay {
+    opacity: 1;
 }
 
 /*===== Form Note Create =====*/
