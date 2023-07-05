@@ -80,10 +80,18 @@
               </div>
             </div>
           </div>
-          <a href="{{ route('auth.logout') }}" class="nav-link nav-logout">
-            <i class='bx bx-log-out nav-icon'></i>
-            <span class="nav-name">Sair</span>
-          </a>
+          <div class="nav-list">
+            <div class="nav-items nav-items-end">
+              <div id="darkModeToggle" class="nav-dark-mode-toggle  nav-link">
+                <i id="darkModeIcon" class='bx bx-sun nav-icon'></i>
+                <span id="darkModeName" class="nav-name">Modo Dark</span>
+              </div>
+              <a href="{{ route('auth.logout') }}" class="nav-link nav-logout">
+                <i class='bx bx-exit bx-rotate-180 nav-icon'></i>
+                <span class="nav-name">Sair</span>
+              </a>
+            </div>
+          </div>
         </nav>
       </div>
       <div class="container-fluid main-page">
@@ -93,6 +101,8 @@
         </div>
       </div>
     </div>
+    {{-- Script Dark --}}
+	<script src="/js/dark-mode.js"></script>
     {{-- Script CDN Bootstrap --}}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     {{-- Script SideBar --}}
