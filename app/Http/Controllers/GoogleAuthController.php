@@ -35,7 +35,10 @@ class GoogleAuthController extends Controller
                 return redirect(route('notes.index'));
             }
         } catch (\Throwable $th) {
-            dd('Erro:', $th->getMessage());
+            return redirect()->route('auth.login')->withErrors([
+                'email' => 'Este email já está em uso. Faça login usando o método de autenticação padrão.',
+            ]);
+
         }
     }
 }
