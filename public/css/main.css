@@ -27,7 +27,7 @@ select:focus {
     --card-hover: #bcbcbc32;
     --sticky-panel-background: #FDFEFF;
     --card-border: 2px solid rgba(67, 67, 67, 0.15);
-    --sidebar-background: linear-gradient(180deg, #FFF 40%, #E50054 100%, #E50054 100%);
+    --sidebar-background: #FFFFFF;
     --header-background: #FDFEFF;
     --body-background: #ffffff;
     --transition-text: color 0.1s ease-in-out;
@@ -54,10 +54,9 @@ body.dark-mode {
     --card-hover: #0000003e;
     --card-background: #23262C;
     --card-border: 2px solid rgba(130, 130, 130, 0.45);
-    --sidebar-background: linear-gradient(180deg, #1F222A 40%, rgb(202, 5, 77) 100%);
+    --sidebar-background: #1F222A;
     --header-background: #1A1C20;
     --sticky-panel-background: #6B6C72;
-
 }
 
 body {
@@ -152,12 +151,15 @@ body {
     margin-bottom: 2.5rem;
 }
 
+.nav-brand {
+    width: 19px;
+}
+
 .nav-logo span {
     font-weight: 500;
     margin-left: 5px;
     font-size: 19px;
 }
-
 
 .nav-list,
 .nav-items {
@@ -183,14 +185,6 @@ body {
     display: flex;
     align-items: center;
     color: var(--black);
-}
-
-.nav-items-end>.nav-link {
-    color: white;
-}
-
-.nav-items-end>.nav-link:hover {
-    color: rgba(76, 76, 76, 0.701);
 }
 
 .nav-link:hover {

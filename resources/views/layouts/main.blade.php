@@ -21,7 +21,7 @@
     <div class="start-page">
       <header class="header">
         <div class="header-container">
-            <a href="#"  class="nav-link" href="">Voltar</a>
+            <a href="{{  route('notes.index') }}"  class="nav-link" href="">Voltar</a>
           <span class="current-page">@yield('current-page-name')</span>
           <div class="header-toggle">
             <i class='bx bx-menu' id="header-toggle"></i>
@@ -64,15 +64,6 @@
                     </li>
                     <li class="list-group-item">
                       <a href="">Texto 3</a>
-                    </li>
-                    <li class="list-group-item">
-                      <a href="">Texto 4</a>
-                    </li>
-                    <li class="list-group-item">
-                      <a href="">Texto 5</a>
-                    </li>
-                    <li class="list-group-item mb-1">
-                      <a href="">Texto 6</a>
                     </li>
                       <a href="{{ route('notes.index') }}" class="btn btn-secondary btn-sm w-100">Ver mais</a>
                   </ul>
