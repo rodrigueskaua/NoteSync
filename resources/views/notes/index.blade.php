@@ -7,7 +7,7 @@
 @section('current-page-name', 'Suas Anotações')
 @section('content')
 {{-- <h3>Anotações de {{ explode(" ", auth()->user()->name )[0] }}</h3> --}}
-<div class="notes-container row row-cols-1 row-cols-md-2 justify-content-center">
+<div class="notes-container row row-cols-1 row-cols-md-2 row-cols-lg-3 justify-content-start">
   @foreach($notes as $note)
   <div class="col">
     <div class="note-card">
