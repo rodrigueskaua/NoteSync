@@ -14,7 +14,7 @@ window.scrollTo({ top: 0, behavior: 'smooth' });
 setTimeout(() => {
     preloader.style.opacity = '0';
     setTimeout(() => {
-        body.classList.remove('no-scroll');
+        document.body.classList.remove('no-scroll');
         preloader.style.display = 'none';
     }, 300);
 }, 1100);
