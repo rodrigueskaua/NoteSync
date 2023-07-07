@@ -68,6 +68,8 @@ body {
 /*===== Blade Layout =====*/
 .main-page {
     margin: var(--header-height) 0 0 0;
+    min-height: calc(100vh - var(--header-height));
+    position: relative;
 }
 
 .main-page.blur {
@@ -258,7 +260,55 @@ body {
     color: var(--primary);
 }
 
+.no-scroll {
+    overflow: hidden;
+}
+
+.preloader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: calc(100vh - var(--header-height));
+    background-color: var(--body-background);
+    z-index: 2;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.preloader-spinner {
+    border: 5px solid var(--black);
+    border-top: 5px solid var(--primary);
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    animation: spin linear infinite;
+    animation-duration: var(--spin-duration);
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(var(--spin-start, 0deg));
+    }
+
+    100% {
+        transform: rotate(var(--spin-end, 360deg));
+    }
+}
+
 @media screen and (min-width: 768px) {
+    .main-page {
+        margin: var(--header-height) 0 0 0;
+        min-height: calc(100vh - calc(var(--header-height) + .5rem));
+    }
+
+    .preloader {
+        min-height: calc(100vh - calc(var(--header-height) + .5rem));
+    }
+
     body>.start-page {
         padding: 0.39rem 0rem 0 4.2rem;
     }
@@ -381,7 +431,6 @@ body {
     min-height: 40px;
     word-break: break-all;
     margin-bottom: 0;
-
 }
 
 .note-overlay {
@@ -395,8 +444,6 @@ body {
     opacity: 0;
     transition: opacity .3s;
 }
-
-
 
 .note-card:hover .note-overlay {
     opacity: 1;
@@ -712,8 +759,6 @@ a {
 .sign-in a:hover {
     color: var(--primary-dark);
 }
-
-
 
 @media (max-width: 768px) {
     .main-login>.row>.col-lg-12 {
