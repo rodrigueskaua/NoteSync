@@ -86,18 +86,23 @@
         </nav>
       </div>
       <div class="container-fluid main-page">
+        <div id="section-preloader" class="preloader">
+          <div class="preloader-spinner"></div>
+        </div>
         <div class="row">
-            @yield('content')
-          </div>
+          @yield('content')
         </div>
       </div>
     </div>
+    {{-- Script Preloader --}}
+    <script src="/js/preloader.js"></script>
     {{-- Script Dark --}}
 	<script src="/js/dark-mode.js"></script>
     {{-- Script CDN Bootstrap --}}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     {{-- Script SideBar --}}
 	<script src="/js/sidebar.js"></script>
+
     @yield('ckeditor')
   </body>
 </html>
