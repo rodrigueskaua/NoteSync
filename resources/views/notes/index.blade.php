@@ -12,7 +12,7 @@
   <div class="col">
     <div class="note-card">
       <h2 class="note-title">{{ $note->title }}</h2>
-      <p class="note-date">{{ date('d/m/Y', strtotime($note->updated_at)) }}</p>
+      <p class="note-date">{{ TextHelper::formatNoteDate($note->updated_at) }}</p>
       <p class="note-content">{{ TextHelper::formatNoteContent($note->content) }}</p>
       <a href="notes/{{ $note->id }}" class="note-overlay"></a>
     </div>
