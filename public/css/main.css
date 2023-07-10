@@ -42,7 +42,7 @@ select:focus {
     --font-semi-bold: 600;
     --z-fixed: 100;
     --fixed-bottom-btn-color: #b6b6b66e;
-    --alert-success-background: #6dedb475;
+    --alert-success-background: #3bf1a0b0;
 
 }
 
@@ -195,11 +195,13 @@ body {
 .nav-link {
     display: flex;
     align-items: center;
-    color: var(--black);
+    color: var(--black) !important;
 }
 
-.nav-link:hover {
-    color: var(--primary);
+.nav-link:link,
+.nav-link:hover,
+.nav-link:active {
+    color: var(--primary) !important;
     transition: var(--transition-text) !important;
 }
 
@@ -262,6 +264,7 @@ body {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    cursor: pointer;
 }
 
 .nav-logout {
@@ -418,6 +421,29 @@ body {
 .alert-success {
     background-color: var(--alert-success-background);
     color: var(--black);
+}
+
+.alert-secondary {
+    background: var(--card-background);
+    box-shadow: -1px -1px 30px 0px rgba(73, 73, 73, 0.093);
+    color: var(--black);
+    border: var(--card-border);
+    flex-direction: column;
+    justify-content: center;
+}
+
+.alert-secondary .btn {
+    background-color: var(--alert-success-background) !important;
+    color: var(--black);
+    border: 2px solid var(--fixed-bottom-btn-color) !important;
+    width: 100%;
+    max-width: 330px;
+    outline: none;
+}
+
+.alert-secondary .btn:hover {
+    transition: transform 0.35s;
+    transform: scale(1.05);
 }
 
 .btn-close {

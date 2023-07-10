@@ -29,16 +29,26 @@
 @endsection
 
 @section('content')
-<div class="notes-container row row-cols-1 row-cols-md-2 row-cols-lg-3 justify-content-start">
-  @foreach($notes as $note)
-  <div class="col">
-    <div class="note-card">
-      <h2 class="note-title">{{ $note->title }}</h2>
-      <p class="note-date">{{ TextHelper::formatNoteDate($note->updated_at) }}</p>
-      <p class="note-content">{{ TextHelper::formatNoteContent($note->content) }}</p>
-      <a href="notes/{{ $note->id }}" class="note-overlay"></a>
+@if($notes->isEmpty())
+  <div class="alerts-container row justify-content-center">
+    <div class="alert alert-secondary d-flex align-items-center" role="alert">
+      Que tal começar a criar suas anotações?
+      <a href="{{ route('notes.create') }}" class="btn mt-1">Criar Nota</a>
     </div>
   </div>
-  @endforeach
-</div>
+@else
+	<div class="notes-container row row-cols-1 row-cols-md-2 row-cols-lg-3 justify-content-start">
+	  @foreach($notes as $note)
+	  <div class="col">
+	    <div class="note-card">
+	      <h2 class="note-title">{{ $note->title }}</h2>
+	      <p class="note-date">{{ TextHelper::formatNoteDate($note->updated_at) }}</p>
+	      <p class="note-content">{{ TextHelper::formatNoteContent($note->content) }}</p>
+	      <a href="notes/{{ $note->id }}" class="note-overlay"></a>
+	    </div>
+	  </div>
+	  @endforeach
+	</div>
+@endif
+
 @endsection
