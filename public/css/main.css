@@ -42,6 +42,8 @@ select:focus {
     --font-semi-bold: 600;
     --z-fixed: 100;
     --fixed-bottom-btn-color: #b6b6b66e;
+    --alert-success-background: #6dedb475;
+
 }
 
 body.dark-mode {
@@ -61,6 +63,7 @@ body.dark-mode {
     --sticky-panel-background: #6B6C72;
     --fixed-border: #ffffff2b 1px solid;
     --fixed-bottom-btn-color: #eeeeee51;
+    --alert-success-background: #095131;
 }
 
 body {
@@ -383,6 +386,43 @@ body {
 }
 
 /*===== Index Note =====*/
+
+/*== Alerts ==*/
+.alerts-container {
+    padding: 0 12px 0 12px;
+}
+
+.alerts-container.row {
+    margin: 0 !important;
+}
+
+.alert {
+    margin-bottom: 0px;
+    margin-top: 12px;
+    border: none;
+    z-index: 1;
+    font-weight: 400;
+}
+
+.alert strong {
+    font-weight: 600;
+}
+
+.alert-success {
+    background-color: var(--alert-success-background);
+    color: var(--black);
+}
+
+.btn-close {
+    box-shadow: 0 0 0 0 !important;
+    outline: 0 !important;
+}
+
+body.dark-mode .btn-close {
+    filter: invert(1);
+}
+
+/*== Notes ==*/
 .notes-container {
     padding: 0 !important;
 }
@@ -393,10 +433,9 @@ body {
 
 .notes-container .note-card {
     position: relative;
-    margin-top: 10px;
+    margin-top: 12px;
     padding: 15px 20px;
     min-height: 150px;
-
     border-radius: 12px;
     border: var(--card-border);
     background: var(--card-background);

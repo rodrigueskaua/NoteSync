@@ -27,7 +27,10 @@ class NoteController extends Controller
         $note->user_id = $user->id;
         $note->save();
 
-        return redirect('/');
+        return redirect()->route('notes.index')->withErrors([
+            'saved' => ' Agora você pode conferir e editar a nota logo abaixo.',
+        ]);
+        ;
     }
 
     public function show($id)
@@ -44,14 +47,17 @@ class NoteController extends Controller
     public function update(Request $request)
     {
         Note::findOrFail($request->id)->update($request->all());
-        return redirect('/');
-
+        return redirect()->route('notes.index')->withErrors([
+            'updated' => ' Confira a versão atualizada abaixo.',
+        ]);
     }
 
     public function destroy($id)
     {
         Note::findOrFail($id)->delete();
-        return redirect()->route('notes.index');
+        return redirect()->route('notes.index')->withErrors([
+            'destroyed' => 'Anotação removida!',
+        ]);
     }
 
 

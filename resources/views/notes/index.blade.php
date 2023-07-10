@@ -5,8 +5,30 @@
 @extends('layouts.main')
 @section('title', 'Suas Anotações')
 @section('current-page-name', 'Suas Anotações')
+@section('messages')
+<div class="alerts-container row justify-content-center">
+  @error('saved')
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Anotação salva!</strong>{{ $message }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  @enderror
+  @error('updated')
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Anotação editada!</strong>{{ $message }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  @enderror
+  @error('destroyed')
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>{{ $message }}</strong>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  @enderror
+</div>
+@endsection
+
 @section('content')
-{{-- <h3>Anotações de {{ explode(" ", auth()->user()->name )[0] }}</h3> --}}
 <div class="notes-container row row-cols-1 row-cols-md-2 row-cols-lg-3 justify-content-start">
   @foreach($notes as $note)
   <div class="col">
