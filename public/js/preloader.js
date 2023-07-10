@@ -9,7 +9,6 @@ const spinEnd = spinStart === '0deg' ? '360deg' : '0deg';
 spinner.style.setProperty('--spin-duration', spinDuration);
 spinner.style.setProperty('--spin-start', spinStart);
 spinner.style.setProperty('--spin-end', spinEnd);
-window.scrollTo({ top: 0, behavior: 'smooth' });
 
 setTimeout(() => {
     preloader.style.opacity = '0';
