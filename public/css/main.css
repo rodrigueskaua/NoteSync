@@ -257,6 +257,13 @@ body {
     white-space: nowrap;
 }
 
+.nav-dark-mode-toggle>* {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
 .nav-logout {
     margin-top: 1rem;
 }
