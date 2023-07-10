@@ -198,9 +198,7 @@ body {
     color: var(--black) !important;
 }
 
-.nav-link:link,
-.nav-link:hover,
-.nav-link:active {
+.nav-link:hover {
     color: var(--primary) !important;
     transition: var(--transition-text) !important;
 }
