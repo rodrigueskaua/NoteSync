@@ -9,9 +9,9 @@
   <textarea required name="content" class="create">
   </textarea>
 
-  <div class="fixed-bottom-container">
-    <div class="d-flex justify-content-end">
-      <button type="submit" class="btn btn-lg btn-primary">Enviar</button>
+  <div class="fixed-bottom">
+    <div class="fixed-bottom-container justify-content-end">
+        <button type="submit" class="btn btn-lg btn-create">Enviar</button>
     </div>
   </div>
 </form>
@@ -22,4 +22,5 @@
 	{{-- Script CKEditor --}}
 	<script src="/js/CKEditor.js"></script>
 @endsection
+
 @endsection
