@@ -12,6 +12,7 @@ Route::middleware(['checkauth'])->group(function () {
     Route::post('/notes/store', [NoteController::class, 'store'])->name('notes.store');
     Route::get('/notes/{id}', [NoteController::class, 'show'])->name('notes.show');
     Route::put('/notes/update/{id}', [NoteController::class, 'update'])->name('notes.update');
+    Route::delete('/notes/destroy/{id}', [NoteController::class, 'destroy'])->name('notes.destroy');
     Route::get('/logout', [LoginController::class, 'logout'])->name('auth.logout');
 
 });
