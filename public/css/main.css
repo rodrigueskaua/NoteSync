@@ -632,7 +632,7 @@ body.dark-mode .btn-close {
 }
 
 .ck.ck-content:not(.ck-comment__input *) {
-    min-height: calc(100vh - 214.14px);
+    min-height: calc(100vh - 216.42px);
 }
 
 body>div.ck-body-wrapper>div:nth-child(2)>div {
@@ -648,7 +648,7 @@ body>div.ck-body-wrapper>div:nth-child(2)>div {
 
 @media screen and (min-width: 768px) {
     .ck.ck-content:not(.ck-comment__input *) {
-        min-height: calc(100vh - 222.14px);
+        min-height: calc(100vh - 224.42px);
     }
 
     .ck .ck-sticky-panel .ck-sticky-panel__content_sticky {
