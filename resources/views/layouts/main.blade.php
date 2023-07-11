@@ -18,6 +18,7 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     {{-- Script Dependency Jquery --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>window.addEventListener('resize', () => {document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);});</script>
   </head>
   <body>
     <div class="start-page">
@@ -89,8 +90,10 @@
       </div>
       <div class="container-fluid main-page">
         <div id="section-preloader" class="preloader">
-          <div class="preloader-spinner"></div>
-        </div>
+            <div class="preloader-container">
+                <div class="preloader-spinner"></div>
+            </div>
+          </div>
         <div class="row">
           @yield('messages')
           @yield('content')
