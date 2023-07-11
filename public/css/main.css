@@ -80,11 +80,11 @@ body {
     position: relative;
 }
 
-.main-page.blur {
+.main-page.blur>*:not(.preloader) {
     transition: .7s;
-    filter: blur(3px);
     pointer-events: none;
     z-index: 3;
+    filter: blur(3px);
 }
 
 .header {
@@ -282,19 +282,24 @@ body {
 }
 
 .preloader {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: sticky;
-    margin: var(--header-height) 0 0 0;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    min-height: calc(100vh - var(--header-height));
+    height: 100%;
     background-color: var(--body-background);
     z-index: 2;
     opacity: 1;
     transition: opacity 0.3s ease;
+}
+
+.preloader-container {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: calc(var(--vh, 1vh) * 100 - var(--header-height));
 }
 
 .preloader-spinner {
@@ -306,7 +311,6 @@ body {
     animation: spin linear infinite;
     animation-duration: var(--spin-duration);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.059), 0 2px 5px rgba(0, 0, 0, 0.116), 0 4px 10px rgba(0, 0, 0, 0.116);
-
 }
 
 @keyframes spin {
@@ -325,8 +329,9 @@ body {
         min-height: calc(100vh - calc(var(--header-height) + .5rem));
     }
 
-    .preloader {
-        min-height: calc(100vh - calc(var(--header-height) + .5rem));
+    .preloader-container {
+        width: calc(100vw - 68px);
+        height: calc(var(--vh, 1vh) * 100 - calc(var(--header-height) + .5rem));
     }
 
     body>.start-page {
