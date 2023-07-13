@@ -23,10 +23,9 @@ class NoteController extends Controller
         $user = auth()->user();
         $note = new Note;
         $note->title = $request->title;
-        $note->content = $request->content;
+        $note->content = $request->content ?? 'Sem texto';
         $note->user_id = $user->id;
         $note->save();
-
         return redirect()->route('notes.index')->withErrors([
             'saved' => ' Agora você pode conferir e editar a nota logo abaixo.',
         ]);
@@ -46,7 +45,10 @@ class NoteController extends Controller
     }
     public function update(Request $request)
     {
-        Note::findOrFail($request->id)->update($request->all());
+        $note = Note::findOrFail($request->id);
+        $note->title = $request->title;
+        $note->content = $request->content ?? 'Sem texto';
+        $note->update();
         return redirect()->route('notes.index')->withErrors([
             'updated' => ' Confira a versão atualizada abaixo.',
         ]);
