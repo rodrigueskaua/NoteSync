@@ -625,6 +625,10 @@ body.dark-mode .btn-close {
     border: none !important;
 }
 
+.ck .ck-sticky-panel {
+    border-bottom: 1px solid var(--gray) !important;
+}
+
 .ck .ck-sticky-panel .ck-sticky-panel__content_sticky {
     margin-top: var(--header-height);
     transition: .5s;
