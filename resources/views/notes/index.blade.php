@@ -37,18 +37,37 @@
     </div>
   </div>
 @else
-	<div class="notes-container row row-cols-1 row-cols-md-2 row-cols-lg-3 justify-content-start">
-	  @foreach($notes as $note)
-	  <div class="col">
-	    <div class="note-card">
-	      <h2 class="note-title">{{ $note->title }}</h2>
-	      <p class="note-date">{{ TextHelper::formatNoteDate($note->updated_at) }}</p>
-	      <p class="note-content">{{ TextHelper::formatNoteContent($note->content) }}</p>
-	      <a href="notes/{{ $note->id }}" class="note-overlay"></a>
-	    </div>
-	  </div>
-	  @endforeach
-	</div>
+<div class="alerts-container row justify-content-center">
+  <div class="alert alert-secondary alert-search d-flex align-items-center justify-content-center" role="alert">
+    <div class="input-group d-flex align-items-center justify-content-center">
+      <div class="input-group-prepend">
+        <span class="input-group-text"><i class="bx bx-search-alt"></i></span>
+      </div>
+      <input type="text" class="form-control search-note" id="search-note" placeholder="Buscar...">
+      <div class="input-group-append">
+        <a href="{{ route('notes.create') }}" class="btn px-4">Criar Nota</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="notes-container" class="notes-container row row-cols-1 row-cols-md-2 row-cols-lg-3 justify-content-start" id="notesContainer">
+  @foreach($notes as $note)
+  <div class="col">
+    <div class="note-card">
+      <h2 class="note-title">{{ $note->title }}</h2>
+      <p class="note-date">{{ TextHelper::formatNoteDate($note->updated_at) }}</p>
+      <p class="note-content">{{ TextHelper::formatNoteContent($note->content) }}</p>
+      <a href="notes/{{ $note->id }}" class="note-overlay"></a>
+    </div>
+  </div>
+  @endforeach
+</div>
+
+@section('searchNotes')
+  {{-- Script CKEditor --}}
+  <script src="/js/search-notes.js"></script>
+@endsection
 @endif
 
 @endsection
