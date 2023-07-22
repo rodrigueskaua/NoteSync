@@ -110,6 +110,7 @@
 	<script src="/js/sidebar.js"></script>
     @yield('ckeditor')
     @yield('sweetAlert')
+    @yield('searchNotes')
 
   </body>
 </html>

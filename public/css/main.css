@@ -444,6 +444,35 @@ body {
     width: 100%;
     max-width: 330px;
     outline: none;
+    z-index: 2;
+}
+
+.alert-search {
+    padding: 7px;
+}
+
+.alert-search .input-group .input-group-text {
+    background: none;
+    border: none;
+    font-size: 23px;
+    color: var(--black);
+    padding: 0.375rem 0px;
+    padding-left: 6px;
+    z-index: 1;
+}
+
+.alert-search .input-group .form-control {
+    font-size: 22px;
+    border: none;
+    border-radius: 0;
+    color: var(--black);
+    transition: border-color 0.3s linear;
+    background-color: var(--card-background);
+    z-index: 1;
+}
+
+.alert-search .input-group .form-control::placeholder {
+    color: var(--gray-dark);
 }
 
 .alert-secondary .btn:hover {
@@ -467,6 +496,13 @@ body.dark-mode .btn-close {
 
 .notes-container.row {
     margin: 0 !important;
+}
+
+.notes-container .no-notes-text {
+    margin-top: 12px;
+    color: var(--black);
+    font-size: 20px;
+
 }
 
 .notes-container .note-card {

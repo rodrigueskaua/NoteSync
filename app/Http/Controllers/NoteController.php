@@ -5,14 +5,40 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Note;
 use Illuminate\Support\Facades\Gate;
+use App\Helpers\TextHelper;
 
 class NoteController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $notes = auth()->user()->notes()->orderBy('updated_at', 'desc')->get();
-        return view('notes.index', compact('notes'));
+        if ($request->get('search')) {
+            $search = $request->get('search');
+            $notesQuery = auth()->user()->notes();
+
+            if ($search != "vazio") {
+                $notesQuery->where(function ($query) use ($search) {
+                    $query->where('title', 'like', "%$search%")->orWhere('content', 'like', "%$search%");
+                });
+            } else {
+                $notesQuery->orderBy('updated_at', 'desc');
+            }
+            $notes = $notesQuery->get();
+            $formatedNotes = [];
+            foreach ($notes as $note) {
+                $formatedNotes[] = [
+                    'id' => $note->id,
+                    'title' => $note->title,
+                    'date' => TextHelper::formatNoteDate($note->updated_at),
+                    'content' => TextHelper::formatNoteContent($note->content),
+                ];
+            }
+            return response()->json($formatedNotes);
+        } else {
+            $notes = auth()->user()->notes()->orderBy('updated_at', 'desc')->get();
+            return view('notes.index', ['notes' => $notes]);
+        }
     }
+
     public function create()
     {
         return view('notes.create');
