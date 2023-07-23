@@ -18,7 +18,7 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     {{-- Script Dependency Jquery --}}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script>window.addEventListener('resize', () => {document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);});</script>
+    <script>function setVhVariable() {document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);} setVhVariable(); window.addEventListener('resize', setVhVariable); document.addEventListener('DOMContentLoaded', setVhVariable)</script>
   </head>
   <body>
     <div class="start-page">
@@ -72,19 +72,20 @@
                   </ul>
                 </div>
               </div>
+              <div class="nav-items">
+                <h3 class="nav-subtitle">Tema</h3>
+                <div id="darkModeToggle" class="nav-dark-mode-toggle  nav-link">
+                  <i id="darkModeIcon" class='bx bx-sun nav-icon'></i>
+                  <span id="darkModeName" class="nav-name">Modo Dark</span>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="nav-list">
-            <div class="nav-items nav-items-end">
-              <div id="darkModeToggle" class="nav-dark-mode-toggle  nav-link">
-                <i id="darkModeIcon" class='bx bx-sun nav-icon'></i>
-                <span id="darkModeName" class="nav-name">Modo Dark</span>
-              </div>
-              <a href="{{ route('auth.logout') }}" class="nav-link nav-logout">
-                <i class='bx bx-exit bx-rotate-180 nav-icon'></i>
-                <span class="nav-name">Sair</span>
-              </a>
-            </div>
+          <div class="nav-items nav-items-end">
+            <a href="{{ route('auth.logout') }}" class="nav-link nav-logout">
+              <i class='bx bx-exit bx-rotate-180 nav-icon'></i>
+              <span class="nav-name">Sair</span>
+            </a>
           </div>
         </nav>
       </div>

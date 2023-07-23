@@ -266,7 +266,7 @@ body {
 }
 
 .nav-logout {
-    margin-top: 1rem;
+    margin-top: 1.5rem;
 }
 
 .show-menu {
@@ -447,6 +447,21 @@ body {
     z-index: 2;
 }
 
+.alert-secondary .btn:hover {
+    transition: transform 0.35s;
+    transform: scale(1.05);
+}
+
+.btn-close {
+    box-shadow: 0 0 0 0 !important;
+    outline: 0 !important;
+}
+
+body.dark-mode .btn-close {
+    filter: invert(1);
+}
+
+
 .alert-search {
     padding: 7px;
 }
@@ -462,7 +477,7 @@ body {
 }
 
 .alert-search .input-group .form-control {
-    font-size: 22px;
+    font-size: 18px;
     border: none;
     border-radius: 0;
     color: var(--black);
@@ -475,19 +490,18 @@ body {
     color: var(--gray-dark);
 }
 
-.alert-secondary .btn:hover {
-    transition: transform 0.35s;
-    transform: scale(1.05);
+.alert-search .input-group .input-group-append .btn {
+    padding: 6px 6px;
+    font-size: 14px;
 }
 
-.btn-close {
-    box-shadow: 0 0 0 0 !important;
-    outline: 0 !important;
+@media screen and (min-width: 768px) {
+    .alert-search .input-group .input-group-append .btn {
+        padding: 8px 20px;
+        font-size: 16px;
+    }
 }
 
-body.dark-mode .btn-close {
-    filter: invert(1);
-}
 
 /*== Notes ==*/
 .notes-container {

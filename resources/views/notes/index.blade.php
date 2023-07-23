@@ -43,9 +43,9 @@
       <div class="input-group-prepend">
         <span class="input-group-text"><i class="bx bx-search-alt"></i></span>
       </div>
-      <input type="text" class="form-control search-note" id="search-note" placeholder="Buscar...">
+      <input type="text" class="form-control search-note" id="search-note" placeholder="Buscar">
       <div class="input-group-append">
-        <a href="{{ route('notes.create') }}" class="btn px-4">Criar Nota</a>
+        <a href="{{ route('notes.create') }}" class="btn">Criar Nota</a>
       </div>
     </div>
   </div>
@@ -65,7 +65,7 @@
 </div>
 
 @section('searchNotes')
-  {{-- Script CKEditor --}}
+  {{-- Script Search Notes --}}
   <script src="/js/search-notes.js"></script>
 @endsection
 @endif
