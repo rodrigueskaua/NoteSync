@@ -6,7 +6,7 @@
 <form action="{{ route('notes.update',$note->id) }}"  method="POST" class="form-note form-note-edit">
     @csrf
     @method('PUT')
-    <input value="{{ $note->title }}"  readonly required type="text" id="input-title" class="form-control" placeholder="Titulo" name="title">
+    <input maxlength="255" value="{{ $note->title }}"  readonly required type="text" id="input-title" class="form-control" placeholder="Titulo" name="title">
 
     <textarea  required name="content" class="edit">
       {{ $note->content }}

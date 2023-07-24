@@ -219,6 +219,7 @@ body {
 
 .list-group {
     max-height: 0;
+    max-width: 125.2px !important;
     opacity: 0;
     visibility: hidden;
     transition: max-height 0.3s ease, opacity 0.5s ease, visibility 0s linear 0.3s;
@@ -232,18 +233,43 @@ body {
     transition-delay: 0.3s;
 }
 
-.list-group .btn {
-    margin: 0px;
+.list-group-item,
+.no-notes {
+    color: var(--black);
+    font-size: 12px;
 }
 
 .list-group-item {
     background-color: transparent !important;
+    border: 1px solid var(--fixed-bottom-btn-color);
 }
 
 .list-group-item a {
     text-decoration: none;
-    font-size: 12px;
+    font-size: 13px;
     color: var(--black);
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.list-group-item a:hover {
+    transition: color 0.3s;
+    color: var(--primary);
+}
+
+
+.list-group .btn {
+    margin: 0px;
+    color: var(--black);
+    border-radius: 4px;
+    border: 1px solid var(--fixed-bottom-btn-color);
+}
+
+.list-group .btn:hover {
+    color: white;
+    background-color: var(--primary);
 }
 
 .nav-icon {
@@ -266,7 +292,7 @@ body {
 }
 
 .nav-logout {
-    margin-top: 1rem;
+    margin-top: 1.5rem;
 }
 
 .show-menu {
@@ -370,7 +396,6 @@ body {
         font-size: 1.3rem;
     }
 
-    /* Element opacity */
     .nav-logo-name,
     .nav-name,
     .nav-subtitle,
@@ -378,6 +403,11 @@ body {
         opacity: 0;
         transition: opacity .5s;
     }
+
+    .list-group {
+        max-width: 170px !important;
+    }
+
 
     .sidebar:hover {
         width: var(--nav-width);
@@ -447,6 +477,21 @@ body {
     z-index: 2;
 }
 
+.alert-secondary .btn:hover {
+    transition: transform 0.35s;
+    transform: scale(1.05);
+}
+
+.btn-close {
+    box-shadow: 0 0 0 0 !important;
+    outline: 0 !important;
+}
+
+body.dark-mode .btn-close {
+    filter: invert(1);
+}
+
+
 .alert-search {
     padding: 7px;
 }
@@ -462,7 +507,7 @@ body {
 }
 
 .alert-search .input-group .form-control {
-    font-size: 22px;
+    font-size: 18px;
     border: none;
     border-radius: 0;
     color: var(--black);
@@ -475,19 +520,18 @@ body {
     color: var(--gray-dark);
 }
 
-.alert-secondary .btn:hover {
-    transition: transform 0.35s;
-    transform: scale(1.05);
+.alert-search .input-group .input-group-append .btn {
+    padding: 6px 6px;
+    font-size: 14px;
 }
 
-.btn-close {
-    box-shadow: 0 0 0 0 !important;
-    outline: 0 !important;
+@media screen and (min-width: 768px) {
+    .alert-search .input-group .input-group-append .btn {
+        padding: 8px 20px;
+        font-size: 16px;
+    }
 }
 
-body.dark-mode .btn-close {
-    filter: invert(1);
-}
 
 /*== Notes ==*/
 .notes-container {
@@ -502,7 +546,6 @@ body.dark-mode .btn-close {
     margin-top: 12px;
     color: var(--black);
     font-size: 20px;
-
 }
 
 .notes-container .note-card {

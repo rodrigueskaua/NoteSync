@@ -5,7 +5,7 @@
 
 <form action="{{ route('notes.store') }}" method="POST" class="form-note">
 @csrf
-  <input  required type="text" class="form-control" placeholder="Titulo" name="title">
+  <input maxlength="255" required type="text" class="form-control" placeholder="Titulo" name="title">
   <textarea required name="content" class="create">
   </textarea>
 

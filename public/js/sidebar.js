@@ -1,4 +1,4 @@
-const showMenu = (headerToggle, navbarId, contentId) => {
+const showMenu = (headerToggle, navbarId) => {
     const toggleBtn = document.getElementById(headerToggle);
     const nav = document.getElementById(navbarId);
     const content = document.querySelector('.main-page');
@@ -10,17 +10,28 @@ const showMenu = (headerToggle, navbarId, contentId) => {
             content.classList.toggle('blur');
         });
 
+        const closeMenu = () => {
+            nav.classList.remove('show-menu');
+            toggleBtn.classList.remove('bx-x');
+            content.classList.remove('blur');
+        };
+
         document.addEventListener('click', (event) => {
             const target = event.target;
             const isSideBarOpen = nav.classList.contains('show-menu');
 
             if (isSideBarOpen && !target.closest('#' + navbarId) && !target.closest('#' + headerToggle)) {
-                nav.classList.remove('show-menu');
-                toggleBtn.classList.remove('bx-x');
-                content.classList.remove('blur');
+                closeMenu();
             }
         });
 
+        window.addEventListener('resize', () => {
+            const isSideBarOpen = nav.classList.contains('show-menu');
+            const blurActive = content.classList.contains('blur');
+            if (isSideBarOpen || blurActive) {
+                closeMenu();
+            }
+        });
         nav.addEventListener('mouseover', () => {
             if (window.innerWidth > 768) {
                 content.classList.add('blur');
@@ -29,12 +40,11 @@ const showMenu = (headerToggle, navbarId, contentId) => {
 
         nav.addEventListener('mouseout', () => {
             if (window.innerWidth > 768) {
-                nav.classList.remove('show-menu');
-                toggleBtn.classList.remove('bx-x');
-                content.classList.remove('blur');
+                closeMenu();
             }
         });
     }
 };
 
 showMenu('header-toggle', 'navbar');
+
