@@ -58,18 +58,7 @@
                     <span class="nav-name">Recentes</span>
                     <i class='bx bx-chevron-down nav-icon nav-dropdown-icon'></i>
                   </a>
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item">
-                      <a href="">Texto 1</a>
-                    </li>
-                    <li class="list-group-item">
-                      <a href="">Texto 2</a>
-                    </li>
-                    <li class="list-group-item">
-                      <a href="">Texto 3</a>
-                    </li>
-                      <a href="{{ route('notes.index') }}" class="btn btn-secondary btn-sm w-100">Ver mais</a>
-                  </ul>
+                    @include('layouts.recent-notes')
                 </div>
               </div>
               <div class="nav-items">

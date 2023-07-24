@@ -42,4 +42,10 @@ class TextHelper
         }
         return $datetime->format('d/m/Y') . ' às ' . $datetime->format('H:i');
     }
+
+    public static function formatSidebarNoteTitle(string $content)
+    {
+        $processedContent = substr($content, 0, 100);
+        return $processedContent;
+    }
 }
