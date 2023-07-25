@@ -32,13 +32,13 @@ const showMenu = (headerToggle, navbarId) => {
                 closeMenu();
             }
         });
-        nav.addEventListener('mouseover', () => {
+        nav.addEventListener('mouseenter', () => {
             if (window.innerWidth > 768) {
                 content.classList.add('blur');
             }
         });
 
-        nav.addEventListener('mouseout', () => {
+        nav.addEventListener('mouseleave', () => {
             if (window.innerWidth > 768) {
                 closeMenu();
             }
