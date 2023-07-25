@@ -32,7 +32,7 @@
   </div>
 
   <div class="forgot-password">
-    <a href="/">Esqueceu sua senha?</a>
+    {{-- <a href="/">Esqueceu sua senha?</a> --}}
   </div>
 
 </div>
