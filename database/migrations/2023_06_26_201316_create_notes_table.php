@@ -12,7 +12,7 @@ return new class extends Migration {
     public function up(): void
     {
         Schema::create('notes', function (Blueprint $table) {
-            $table->uuid('id')->index()->default(DB::raw('(UUID())'));
+            $table->char('id', 36)->primary();;
             $table->string('title');
             $table->longText('content');
             $table->timestamps();

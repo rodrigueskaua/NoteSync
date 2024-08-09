@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Note;
 use Illuminate\Support\Facades\Gate;
 use App\Helpers\TextHelper;
+use Illuminate\Support\Str;
 
 class NoteController extends Controller
 {
@@ -48,6 +49,7 @@ class NoteController extends Controller
     {
         $user = auth()->user();
         $note = new Note;
+        $note->id = (string) Str::uuid();
         $note->title = $request->title;
         $note->content = $request->content ?? 'Sem texto';
         $note->user_id = $user->id;
