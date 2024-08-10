@@ -2,7 +2,7 @@
 
 <h1 align="center">
   <br>
-  <a href="https://notesync.kauarodrigues.com.br"><img src="https://kauarodrigues.com.br/assets/notesync/notesync-icon.png" alt="NoteSync" width="200"></a>
+  <a href="https://notesync.kauarodrigues.com"><img src="https://raw.githubusercontent.com/rodrigueskaua/Assets-For-Readmes/master/NoteSync/favicon.svg" alt="NoteSync" width="200"></a>
   <br>
   NoteSync
   <br>
@@ -10,7 +10,7 @@
 
 <h4 align="center">Aplicativo web de gerenciamento de notas simples desenvolvido com <a href="https://laravel.com" target="_blank">Laravel</a>.</h4>
 <div align="center">
-  <a  href="https://notesync.kauarodrigues.com.br"><img src="https://kauarodrigues.com.br/assets/notesync/useNoteSync.gif" alt="NoteSync"></a>
+  <a  href="https://notesync.kauarodrigues.com.br"><img src="https://raw.githubusercontent.com/rodrigueskaua/Assets-For-Readmes/master/NoteSync/NoteSync-Show.gif" alt="NoteSync"></a>
 </div>
 
 ## Sobre o Projeto
