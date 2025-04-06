@@ -1,71 +1,102 @@
-
-
-<h1 align="center">
-  <br>
-  <a href="https://notesync.kauarodrigues.com"><img src="https://raw.githubusercontent.com/rodrigueskaua/Assets-For-Readmes/master/NoteSync/favicon.svg" alt="NoteSync" width="200"></a>
-  <br>
-  NoteSync
-  <br>
-</h1>
-
-<h4 align="center">Aplicativo web de gerenciamento de notas simples desenvolvido com <a href="https://laravel.com" target="_blank">Laravel</a>.</h4>
 <div align="center">
-  <a  href="https://notesync.kauarodrigues.com.br"><img src="https://raw.githubusercontent.com/rodrigueskaua/Assets-For-Readmes/master/NoteSync/NoteSync-Show.gif" alt="NoteSync"></a>
+  <a href="https://notesync.kauarodrigues.com">
+    <img src="https://raw.githubusercontent.com/rodrigueskaua/Assets-For-Readmes/master/NoteSync/favicon.svg" alt="Logo" width="120" height="120">
+  </a>
+
+  <h3 align="center">NoteSync</h3>
+
+  <p align="center">
+    Aplicação web para criação e organização de anotações
+    <br> <br> 
+    <a href="https://notesync.kauarodrigues.com">Ver Deploy</a>
+  </p>
 </div>
 
-## Sobre o Projeto
-O NoteSync é um projeto de estudos e meu primeiro projeto desenvolvido com o framework Laravel. É um aplicativo web que permite criar e gerenciar notas de forma prática e organizada. Ao longo do desenvolvimento, busquei aplicar os conhecimentos adquiridos e explorar as funcionalidades oferecidas pelo Laravel.
+## Sobre
+<div align="center">
+  <img src="https://raw.githubusercontent.com/rodrigueskaua/Assets-For-Readmes/master/NoteSync/NoteSync-Show.gif" alt="Demonstração do Projeto" />
+</div>
+<br>
+<p><strong>NoteSync</strong> é uma aplicação web para anotações simples, desenvolvida com o objetivo de permitir que o usuário escreva notas rápidas de forma prática e organizada. Apesar da proposta minimalista, oferece recursos de formatação de texto, como <strong>negrito</strong>, <em>itálico</em>, listas, links e alinhamento, proporcionando uma experiência de escrita mais completa.</p>
 
-## Principais Funcionalidades
-- Criação e edição de notas
-    -   Possui recursos de formatação de texto, como negrito, itálico, sublinhado, alinhamento de texto, listas, links e muito mais
--   Busca de notas
-    -   Os usuários podem localizar uma nota específica pelo título ou por um trecho de texto dentro das notas
--   Login
-    -   Os usuários podem fazer login de forma rápida usando suas contas do Google ou podem optar por criar uma conta manualmente no aplicativo.
--   Controle de Acesso
-    -   Utilizando o recurso de Gates, cada usuário tem acesso exclusivo às suas próprias notas. Dessa forma, os usuários não podem visualizar ou editar as notas de outros usuários
--   Temas claro e escuro
+<p>Com uma interface intuitiva, suporte a login via Google, sistema de busca eficiente e controle de acesso individual às anotações, a aplicação alia praticidade e segurança. É uma solução leve e funcional para quem precisa registrar ideias, tarefas ou pensamentos no dia a dia.</p>
 
 ## Demo
-Você pode conferir a demonstração do projeto NoteSync <a  href="https://notesync.kauarodrigues.com.br">clicando aqui</a>. Aproveite para explorar as funcionalidades e experimentar! Se tiver alguma dúvida, feedback ou encontrar algum erro, sinta-se à vontade para entrar em contato. Agradeço sua visita!
+Você pode conferir o projeto NoteSync <a  href="https://notesync.kauarodrigues.com">clicando aqui</a>.
+
+## Stack
+
+O projeto foi desenvolvido com as seguintes tecnologias e bibliotecas:
+
+<a href="https://laravel.com" target="_blank">
+  <img src="https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white" alt="Laravel Badge" />
+</a>
+<a href="https://getbootstrap.com/" target="_blank">
+  <img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap Badge" />
+</a>
+<a href="https://www.mysql.com/" target="_blank">
+  <img src="https://img.shields.io/badge/MySQL-00758F?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL Badge" />
+</a>
+<a href="https://jquery.com/" target="_blank">
+  <img src="https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white" alt="jQuery Badge" />
+</a>
+
+### Bibliotecas complementares
+
+[CKEditor](https://ckeditor.com/) <br>
+[Laravel Socialite](https://laravel.com/docs/8.x/socialite) <br>
+[Laravel Lang](https://github.com/caouecs/Laravel-lang) <br>
+[Box Icons](https://boxicons.com/) <br>
 
 ## Como Usar
-Para utilizar o NoteSync, você precisará do Git e do Composer instalados em seu computador. Além disso, é necessário ter o servidor MySQL em execução e configurar corretamente o arquivo .env com as informações do banco de dados. A partir das linhas de comando:
 
-```bash
-# Clone este repositório
-$ git clone https://github.com/rodrigueskaua/NoteSync.git
+Siga as etapas abaixo para rodar o projeto localmente.
 
-# Acesse a pasta do projeto
-$ cd NoteSync
+### Pré-requisitos
 
-# Instale as dependências do Laravel
-$ composer install
+Certifique-se de ter os seguintes itens instalados:
 
-# Configure o arquivo .env com as informações do banco de dados
+- PHP >= 8.x
+- Composer
+- Node.js e npm
+- MySQL ou outro banco de dados compatível
 
-# Gere a chave de criptografia do Laravel
-$ php artisan key:generate
+### Instalação
 
-# Rode as migrações para criar as tabelas no banco de dados
-$ php artisan migrate
-
-# Inicie o servidor local do Laravel
-$ php artisan serve
+#### Clone o repositório:
+```sh
+git clone https://github.com/rodrigueskaua/NoteSync.git
 ```
-## Tecnologias e Bibliotecas
-O NoteSync utiliza as seguintes tecnologias e bibliotecas de código aberto:
 
--   [Laravel](https://laravel.com/): O framework PHP utilizado para o desenvolvimento do backend do aplicativo
--   [MySQL](https://www.mysql.com/): O banco de dados usado para armazenar as notas e informações dos usuários
--   [CKEditor](https://ckeditor.com/): Biblioteca  que oferece uma ferramenta de edição de texto avançada para a criação e edição de notas
--   [Socialite](https://laravel.com/docs/8.x/socialite): Biblioteca do Laravel que permite o login com contas do Google
--   [Laravel Lang](https://github.com/caouecs/Laravel-lang): Biblioteca que fornece suporte para múltiplos idiomas no Laravel
--   [Bootstrap](https://getbootstrap.com/): Framework CSS utilizado para criar interfaces responsivas e estilizadas
--   [Box Icons](https://boxicons.com/): Biblioteca de ícones
+#### Acesse a pasta do projeto:
+```sh
+cd NoteSync
+```
 
----
-> GitHub [@rodrigueskaua](https://github.com/rodrigueskaua) 
+#### Instale as dependências do backend:
+```sh
+composer install
+```
 
+#### Instale as dependências do frontend:
+```sh
+npm install
+```
 
+#### Copie o arquivo `.env.example` para `.env` e gere a chave da aplicação:
+```sh
+cp .env.example .env
+php artisan key:generate
+```
+
+#### Configure o arquivo .env com as informações do banco de dados
+
+#### Configure o banco de dados e execute as migrations:
+```sh
+php artisan migrate
+```
+
+#### Inicie o servidor:
+```sh
+php artisan serve
+```
